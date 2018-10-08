@@ -18,7 +18,8 @@
         <h1 v-text="number"></h1>
         <!--  -->
         <h1 v-html="dom"></h1>
-        <div v-on:click="handleClick">{{content}}</div>
+        <div @click="handleClick">{{content}}</div>
+        <!-- <div v-on:click="handleClick">{{content}}</div> -->
     </div>
     <script>
         new Vue({
@@ -27,12 +28,12 @@
             data: {
                 msg: "world!",
                 number: 123,
-                dom:"<i>hello<i>",
+                dom: "<i>hello<i>",
                 content: "hello1"
             },
-            methods:{
-                handleClick(){
-                    console.log('this.setstate', this.content,this)
+            methods: {
+                handleClick() {
+                    console.log('this.setstate', this.content, this)
                     this.content = "world1"
                 }
             }
